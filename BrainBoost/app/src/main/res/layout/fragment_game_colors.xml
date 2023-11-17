@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="610dp"
+    tools:context=".GameColorsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewColor"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="155dp"
+            android:gravity="center"
+            android:text=""
+            android:textAllCaps="true"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="-40dp"
+            android:layout_marginTop="155dp"
+            android:background="@drawable/button_game_color_red"
+            android:text="Button"
+            android:textColor="@color/md_theme_light_inverseOnSurface"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/button1"
+            app:layout_constraintHorizontal_bias="0.423"
+            app:layout_constraintStart_toStartOf="@+id/textViewColor"
+            app:layout_constraintTop_toBottomOf="@+id/textViewColor" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginEnd="-30dp"
+            android:background="@drawable/button_game_color_blue"
+            android:text="Button"
+            android:textColor="@color/md_theme_light_inverseOnSurface"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="@+id/textViewColor"
+            app:layout_constraintTop_toBottomOf="@+id/textViewColor"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_game_color_green"
+            android:text="Button"
+            android:textColor="@color/md_theme_light_inverseOnSurface"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/button"
+            app:layout_constraintStart_toStartOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:background="@drawable/button_game_color_yellow"
+            android:text="Button"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/button2"
+            app:layout_constraintEnd_toEndOf="@+id/button1"
+            app:layout_constraintStart_toStartOf="@+id/button1"
+            app:layout_constraintTop_toBottomOf="@+id/button1"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewColor"
+            app:shapeAppearanceOverlay="@style/circular" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="#80FFE5B4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewHeart1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/heart_up"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewHeart2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/heart_up"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewHeart3"
+            app:layout_constraintStart_toEndOf="@+id/imageViewHeart1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewHeart3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="80dp"
+            android:src="@drawable/heart_up"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

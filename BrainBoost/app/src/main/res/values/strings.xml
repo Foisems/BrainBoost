@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">BrainBoost</string>
+    <string name="splash">тренировка мозга</string>
+
+    <string name="exercise">Прокачайте свой разум</string>
+
+    <string name="rules_game_colors">Выберите цвет текста показанного слова</string>
+
+    <string name="back">Назад</string>
+    <string name="paused">Пауза</string>
+
+    <string name="game_color_red">Красный</string>
+    <string name="game_color_blue">Синий</string>
+    <string name="game_color_green">Зеленый</string>
+    <string name="game_color_yellow">Желтый</string>
+
+    <string name="right">Верно</string>
+    <string name="incorrect">Неверно</string>
+
+    <string name="game_over">Закончились жизни</string>
+    <string name="start">Начать</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
