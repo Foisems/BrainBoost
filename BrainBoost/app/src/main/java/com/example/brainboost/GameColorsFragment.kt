@@ -1,6 +1,5 @@
 package com.example.brainboost
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.content.Context
@@ -8,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -17,21 +15,16 @@ import kotlin.random.Random
 
 class GameColorsFragment : Fragment() {
 
-    interface OnNumberSelectedListener {
-        fun onNumberSelected(number: Int)
-    }
-    interface OnNumberScoreListener {
-        fun onNumberScore(number: Int)
-    }
-
-    private lateinit var listener1: OnNumberScoreListener
-    private lateinit var listener: OnNumberSelectedListener
-
+    private var interactionListener: FragmentInteractionListener? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        listener = context as OnNumberSelectedListener
-        listener1 = context as OnNumberScoreListener
+        // Проверяем, что контекст активности реализует интерфейс
+        if (context is FragmentInteractionListener) {
+            interactionListener = context
+        } else {
+            throw ClassCastException("$context must implement FragmentInteractionListener")
+        }
     }
 
     val random = Random.Default
@@ -52,7 +45,6 @@ class GameColorsFragment : Fragment() {
     var score = 0
 
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -67,13 +59,21 @@ class GameColorsFragment : Fragment() {
         imageViewHeart2 = view.findViewById(R.id.imageViewHeart2)
         imageViewHeart3 = view.findViewById(R.id.imageViewHeart3)
 
+        when(countIncorrect){
+            1 -> imageViewHeart1.setImageResource(R.drawable.heart_down)
+            2 -> {
+                imageViewHeart1.setImageResource(R.drawable.heart_down)
+                imageViewHeart2.setImageResource(R.drawable.heart_down)
+            }
+            3 -> imageViewHeart3.setImageResource(R.drawable.heart_down)
+        }
+
         btn1 = view.findViewById(R.id.button)
         btn2 = view.findViewById(R.id.button1)
         btn3  = view.findViewById(R.id.button2)
         btn4 = view.findViewById(R.id.button3)
 
         image = view.findViewById(R.id.imageView)
-
 
         randTextColor()
         randButtonColor()
@@ -90,24 +90,21 @@ class GameColorsFragment : Fragment() {
         btn4.setOnClickListener{
             answer(btn4)
         }
-
         return view
     }
 
     fun answer(btn : Button){
         image.animate().alpha(1F)
-        colorCheck(btn)
+        isCorrectColor(btn)
         randTextColor()
         randButtonColor()
 
          Handler().postDelayed({
             image.animate().alpha(0F)
         }, 600)
-
     }
 
-
-    fun colorCheck(btn: Button){
+    fun isCorrectColor(btn: Button){
         var color = textColor.currentTextColor
         var textColor : String = ""
 
@@ -122,9 +119,9 @@ class GameColorsFragment : Fragment() {
                 textColor = getString(R.string.game_color_blue)
         }
         if (textColor == btn.text){
-            imageViewRight.setImageResource(R.drawable.right)
-            score += 30
-            listener1.onNumberScore(score)
+            imageViewRight.setImageResource(R.drawable.correct)
+            score += 10
+            interactionListener?.onNumberScore(score)
         }
         else {
             imageViewRight.setImageResource(R.drawable.incorrect)
@@ -136,11 +133,10 @@ class GameColorsFragment : Fragment() {
             }
         }
         if(countIncorrect == 3){
-            listener.onNumberSelected(score)
+            interactionListener?.onNumberSelected(score)
         }
     }
 
-    @SuppressLint("ResourceAsColor")
     fun randTextColor(){
         val randomNumberColorText = random.nextInt(1, 5)
         val randomNumberText = random.nextInt(1, 5)
@@ -173,11 +169,8 @@ class GameColorsFragment : Fragment() {
                 textColor.setText(R.string.game_color_green)
             }
         }
-
-
     }
 
-    @SuppressLint("ResourceAsColor")
     fun randButtonColor(){
         val arrayNumColor = mutableListOf(1, 2, 3, 4)
         arrayNumColor.shuffle()
@@ -225,9 +218,6 @@ class GameColorsFragment : Fragment() {
             3 -> btn4.setText(R.string.game_color_red)
             4 -> btn4.setText(R.string.game_color_yellow)
         }
-
-
-
         when(resultArrayNumColor1[0]){
             1 -> {
                 btn1.setBackgroundResource(R.drawable.button_game_color_blue)
@@ -301,4 +291,6 @@ class GameColorsFragment : Fragment() {
             }
         }
     }
+
+
 }

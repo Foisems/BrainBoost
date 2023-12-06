@@ -38,6 +38,7 @@ android {
 }
 
 dependencies {
+    implementation ("com.google.code.gson:gson:2.8.8")
 
     implementation("androidx.fragment:fragment-ktx:1.3.6")
     implementation("androidx.core:core-ktx:1.9.0")
@@ -45,6 +46,8 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.android.material:material:1.10.0")
+    implementation("androidx.drawerlayout:drawerlayout:1.2.0")
+    implementation("com.google.firebase:firebase-crashlytics-buildtools:2.9.9")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

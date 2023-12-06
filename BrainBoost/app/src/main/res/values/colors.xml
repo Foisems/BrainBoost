@@ -75,4 +75,6 @@
     <color name="blue">#3C57EA</color>
     <color name="green">#8BC34A</color>
     <color name="textColorDark">#5E5757</color>
+
+    <color name="light_gray">#E3E3DA</color>
 </resources>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="610dp"
+    tools:context=".GamePasswordFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="#80FFE5B4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewHeart1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/heart_up"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewHeart2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/heart_up"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewHeart3"
+            app:layout_constraintStart_toEndOf="@+id/imageViewHeart1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewHeart3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="80dp"
+            android:src="@drawable/heart_up"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/btnName1"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_gravity="fill"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/button_game_color_yellow"
+            android:text="Проверить"
+            android:textAllCaps="false"
+            android:textColor="@color/textColorDark"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnName2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageView6"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+        <Button
+            android:id="@+id/btnNamePaste1"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_gravity="fill"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/textColorDark"
+            android:background="@color/light_gray"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView6"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageView6"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+        <Button
+            android:id="@+id/btnName3"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_gravity="fill"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_game_color_yellow"
+            android:text="Проверить"
+            android:textAllCaps="false"
+            android:textColor="@color/textColorDark"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/btnName1"
+            app:layout_constraintStart_toStartOf="@+id/btnName1"
+            app:layout_constraintTop_toBottomOf="@+id/btnName1" />
+
+        <Button
+            android:id="@+id/btnName4"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_gravity="fill"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_game_color_yellow"
+            android:text="Проверить"
+            android:textAllCaps="false"
+            android:textColor="@color/textColorDark"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/btnName2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btnName2"
+            app:layout_constraintTop_toBottomOf="@+id/btnName2" />
+
+        <Button
+            android:id="@+id/btnName2"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_gravity="fill"
+            android:layout_marginTop="150dp"
+            android:layout_marginEnd="-10dp"
+            android:background="@drawable/button_game_color_yellow"
+            android:text="Проверить"
+            android:textAllCaps="false"
+            android:textColor="@color/textColorDark"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+        <Button
+            android:id="@+id/btnNamePaste2"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_gravity="fill"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/textColorDark"
+            android:background="@color/light_gray"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView7"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/imageView7"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="-5dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewHeart2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="-5dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewHeart2"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageViewIsCorrect"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="220dp"
+            android:translationZ="100dp"
+            android:elevation="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            app:shapeAppearanceOverlay="@style/circular" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

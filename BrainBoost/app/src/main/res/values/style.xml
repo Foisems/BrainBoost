@@ -2,10 +2,12 @@
 <resources>
     <style name="roundImage">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
+        <item name="cornerSize">20%</item>
     </style>
     <style name="circular">
         <item name="cornerSize">50%</item>
     </style>
-
+    <style name="myNavMenuStyle" parent="Widget.Design.NavigationView">
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

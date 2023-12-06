@@ -16,7 +16,6 @@ import com.example.brainboost.databinding.ActivitySplashBinding
 class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
 
-
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
