@@ -18,6 +18,10 @@ class ArticlesAdapter(context: Context, private val articles: List<Article>) : A
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences("ItemState", Context.MODE_PRIVATE)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+        val article0 = articles[0]
+        article0.isUnlocked = true
+        saveItemState(article0)
+
         val article = articles[position]
         val view = convertView ?: LayoutInflater.from(context)
             .inflate(R.layout.list_item_shop, parent, false)
