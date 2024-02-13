@@ -244,7 +244,7 @@ class GameActivity : AppCompatActivity(), FragmentInteractionListener  {
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
             finish()
-            saveScore( (score * multiplier + score).toInt(), this)
+            saveScore( (score * multiplier).toInt(), this)
             multiplier = 1.0
         }
     }
